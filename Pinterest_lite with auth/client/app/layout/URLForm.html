@@ -1,0 +1,14 @@
+<div id="urlBox">
+
+<div><form ng-controller="URLForm as vm" ng-submit="vm.submit()">
+    URL: <input id="urlInput" type="url" name="input" ng-model="vm.url.url" required />
+  <span class="error" ng-show="myForm.input.$error.required">
+    Required!</span>
+  <span class="error" ng-show="myForm.input.$error.url">
+    Not valid url!</span>
+    <input type="submit" id="submit" value="Submit" />
+
+</form>
+</div>
+
+</div>

@@ -1,0 +1,13 @@
+
+<div id="outerFriends" ng-controller="UserFollowers as vm">
+    <button ng-click="vm.activateFollowees(); showme = !showme">friends</button>
+    <div id="friends" ng-show = 'showme'>
+        <p id="marginBottom">you are currently following {{vm.numFollowees}} people</p>
+        <div ng-repeat="friend in vm.followees">
+            <p>{{friend.FName}} {{friend.LName}} has {{friend.Count}} posts</p>
+            <button ng-click="vm.showUserPosts(friend.UserID)">see {{friend.FName}}'s posts</button>
+            <button ng-click="vm.stopFollowing(friend.UserID)">delete {{friend.FName}}</button>
+            <hr />
+        </div>
+    </div>
+</div>

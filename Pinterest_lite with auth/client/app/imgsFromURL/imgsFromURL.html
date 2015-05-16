@@ -1,0 +1,7 @@
+
+<div class="variableBlock" ng_repeat="image in vm.images track by $index">
+    <img ng-src="{{image}}">
+    <button ng-click="vm.createPost(vm.url.url, image, 'my new post')">
+        Pin This
+    </button>
+</div>

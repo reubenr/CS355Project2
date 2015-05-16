@@ -1,0 +1,56 @@
+<div class="block" ng-repeat='post in vm.posts'>
+    <div>
+        <img ng-src="{{'http://localhost:3000/' + post.LocalImgURL}}">
+<div class="postWrap">
+        <div ng-hide="vm.editorEnabled[$index]">
+            <p>{{post.Description}}</p>
+            <a ng-show="post.owned" href="javascript:void(0)"  ng-click="vm.enableEditor($index)">Edit description</a>
+        </div>
+        <div ng-show="vm.editorEnabled[$index]">
+            <textarea ng-model="vm.editableDesc" ng-show="vm.editorEnabled[$index]">
+            </textarea>
+            <div style="margin-top: 3%">
+                <a href="javascript:void(0)"  ng-click="vm.updatePost(post.PostID, post.UserID)">Save</a>
+                or
+                <a href="javascript:void(0)" ng-click="vm.disableEditor($index)">Cancel</a>
+            </div>
+        </div>
+        <hr />
+        <a ng-hide="post.owned" href="javascript:void(0)"  ng-click="vm.followPoster(post.UserID)">
+            Follow Poster
+        </a>
+        <a href="{{post.OrigImgURL}}" >Visit site</a>
+        <hr />
+        <a ng-hide="vm.commentsEnabled[$index]" href="javascript:void(0)" ng-click="vm.getComments(post.PostID, $index)">See Comments</a>
+        <div ng-show="vm.commentsEnabled[$index]">
+        <div ng-repeat='Comment in post.comments'>
+           <p>{{Comment}}</p>
+           <hr />
+        </div>
+        </div>
+        <div ng-show="vm.commentsEnabled[$index]">
+            <p>add a comment</p>
+           <textarea ng-model="vm.makeComment">
+            </textarea>
+            <p>add a tag</p>
+           <textarea ng-model="vm.makeTag">
+            </textarea>
+            <div style="margin-top: 3%">
+                <a style="display: inline-block; margin-right: 10px" href="javascript:void(0)"  ng-click="vm.tagComment(post.PostID)">Save</a>
+                <a style="display: inline-block;" href="javascript:void(0)" ng-click="vm.clearComment()">Cancel</a>
+                <hr />
+            </div>
+        </div>
+        <a ng-show="vm.commentsEnabled[$index]" href="javascript:void(0)" ng-click="vm.hideComments($index)">Hide Comments</a>
+        <hr />
+        <p>posted by: {{post.FName}} {{post.LName}} </p>
+        <a ng-show="post.owned" href="javascript:void(0)"  ng-click="vm.deletePost(post.PostID, post.UserID)">
+            Delete Post
+        </a>
+    </div>
+        </div>
+</div>
+
+
+
+

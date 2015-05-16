@@ -1,0 +1,56 @@
+
+<div ng-controller="LoginCtrl">
+
+        <form class="loginForm" ng-submit="login()" name="myOtherForm">
+            <fieldset>
+                <legend>Sign In</legend>
+        <span>Email <input type="email" name="emailinput2" ng-model="user.username" required />
+        <span class="error" ng-show="myOtherForm.emailinput.$error.required">
+         Required!</span>
+        <span class="error" ng-show="myOtherForm.emailinput.$error.email">
+        Not valid email!</span></span>
+
+        <span>Password <input type="password" name="passinput2" ng-model="user.password" required  />
+        <span class="error" ng-show="myOtherForm.passinput.$error.required">
+        Required!</span></span>
+
+            <input class="submit" type="submit" id="submit" value="Submit" />
+            </fieldset>
+        <hr />
+        </form>
+    </div>
+
+
+
+<div ng-controller="Login as vm">
+
+        <form class="loginForm" ng-submit="vm.createUser()" name="myForm">
+            <fieldset>
+                <legend>Create Account</legend>
+        <span>Email <input type="email" name="emailinput" ng-model="vm.email" required />
+        <span class="error" ng-show="myForm.emailinput.$error.required">
+         Required!</span>
+        <span class="error" ng-show="myForm.emailinput.$error.email">
+        Not valid email!</span></span>
+
+        <span>Password <input type="password" name="passinput" ng-model="vm.pass" required  />
+        <span class="error" ng-show="myForm.passinput.$error.required">
+         Required!</span></span>
+
+        <span>First name <input type="text" name="fnameinput" ng-model="vm.fname" required  />
+        <span class="error" ng-show="myForm.fnameinput.$error.required">
+         Required!</span></span>
+
+        <span>Last name <input type="text" name="lnameinput" ng-model="vm.lname" required  />
+        <span class="error" ng-show="myForm.lnameinput.$error.required">
+         Required!</span></span>
+
+        <input class="submit" type="submit" id="submitNew" value="Submit"/>
+                </fieldset>
+        </form>
+
+</div>
+
+
+
+

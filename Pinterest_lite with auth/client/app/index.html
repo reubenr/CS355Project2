@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" data-ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" data-ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" data-ng-app="app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" data-ng-app="app" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pinterest Lite</title>
+    <link href="./favicon.ico" rel="icon" type="image/x-icon" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app.css">
+    <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+<div id="urlWrap">
+    <div class="pageWrap">
+        <img id="logo" src="static/pl.png" width="275">
+    </div>
+    <div data-ng-include="'layout/URLForm.html'"></div>
+</div>
+<header>
+    <div class = "pageWrap">
+        <nav>
+            <ul>
+                <li><a href="#/posts">Posts</a></li>
+                <li><a href="#/login">Login</a></li>
+                <li><a href="#/about">About</a></li>
+                <li data-ng-include="'user/logout.html'"></li>
+            </ul>
+        </nav>
+    </div>
+
+<div class = "pageWrap">
+    <div data-ng-include="'userFollowers/userFollowers.html'"></div>
+</div>
+</header>
+<div class="pageWrap">
+
+    <div data-ng-view></div>
+
+
+    <!-- In production use:
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+    -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- Other dependencies -->
+    <!-- Main -->
+    <script src="app.module.js"></script>
+    <script src="app.dataService2.js"></script>
+    <script src="app.authFactory.js"></script>
+    <script src="app.auth.js"></script>
+    <!-- Layout -->
+    <script src="layout/layout.module.js"></script>
+    <script src="layout/URLForm.js"></script>
+    <!-- About -->
+    <script src="about/about.module.js"></script>
+    <script src="about/about.routes.js"></script>
+
+    <!-- Posts -->
+    <script src="posts/posts.module.js"></script>
+    <script src="posts/postdataservice.js"></script>
+    <script src="posts/posts.routes.js"></script>
+    <script src="posts/posts.js"></script>
+
+    <!--Login-->
+    <script src="user/login.module.js"></script>
+    <script src="user/userdataservice.js"></script>
+    <script src="user/login.js"></script>
+    <script src="user/logout.js"></script>
+    <script src="user/login.routes.js"></script>
+    <!--UserFollwers-->
+    <script src="userFollowers/userFollowers.module.js"></script>
+    <script src="userFollowers/userFollowersdataservice.js"></script>
+    <script src="userFollowers/followers.js"></script>
+    <!-- Images Displayed from URL -->
+    <script src="imgsFromURL/imgsFromURL.module.js"></script>
+    <script src="imgsFromURL/URLdataservice.js"></script>
+    <script src="imgsFromURL/imgsFromURL.routes.js"></script>
+    <script src="imgsFromURL/imgsFromURL.js"></script>
+    <!-- Includes from base webstorm base project -->
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
+</div>
+</body>
+</html>

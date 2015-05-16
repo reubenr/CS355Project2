@@ -1,0 +1,109 @@
+/* app css stylesheet */
+
+/* remove built in styles for some browsers */
+html, body, div, h1, h2, h3, p, a, em, img,
+ul, li, fieldset, form, label, legend,
+footer, section{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+
+img {display: block; max-width: 100%; height: auto;}
+@media \0screen {img { width: auto }} /* Prevent height distortion in IE8. */
+
+body {max-width: 100%; font: normal 12pt/1.3em Verdana, Helvetica, Arial, sans-serif; background-color: #eee;}
+ol, ul {list-style: none;}
+h1 {font: normal 1.25em/1.6em Georgia, Times, "Times New Roman", serif;}
+p {margin: .1em 0; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVQIW2NkAAIAAAoAAggA9GkAAAAASUVORK5CYII=);/*fix issue in andorid browsers where p elements don't take up their full width*/}
+a {text-decoration: none; color: black;}
+.pageWrap {max-width: 96%; margin: 0 auto;}
+#about {width: 76%; margin: 0 auto; padding: 40px; background-color: #fff}
+#logo {margin-top: 7px;}
+#urlWrap {text-align: center;}
+header {background-color: #193b54; padding: 2% 0; position: relative;}
+#outerFriends {position: absolute; right: 20px; top: 5px; }
+#friends {background-color: #fff; padding: 10px;}
+#urlBox {margin: 2% auto; display: inline-block;}
+#urlInput {width: 400px;}
+#marginBottom {margin-bottom: 15px;}
+.block { max-width: 232px; margin: 10px 10px 0 0; display: inline-flex; flex-flow: row wrap; justify-content: flex-start; overflow: hidden; border-radius: 6px; background-color: #fff;}
+.variableBlock {margin: 10px 10px 0 0; display: inline-flex; flex-flow: row wrap; justify-content: flex-start; overflow: hidden;}
+.block a {text-decoration: none; color: #3b5d76; font-size: .8em; line-height: 1em; display: block; margin-bottom: 10px;}
+.block a:hover {color: #000;}
+.postWrap {padding: 5px;}
+.loginForm {width: 60%; margin: 50px auto;}
+legend{margin-bottom: 20px; font-size: 1.4em;}
+.loginForm span{display: block; margin-bottom: 15px;}
+.loginForm label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+}
+.loginForm input {
+    width: 300px;
+    display: inline-block;
+    float: left;
+}
+
+button, ng-submit {background-color: #999999; padding: 10px; border-radius: 3px; border-width: 1px; border-color: #999999; border-style: solid; color: #fff;}
+button:hover, ng-submit:hover {border-width: 1px; border-color: #777777; border-style: solid; background-color: #888;}
+
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    line-height: 30px;
+    height: 30px;
+    border-bottom: 1px solid #888;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: .3s background-color;
+}
+
+nav a:hover {
+    background-color: #3b5d76;
+}
+
+nav a.active {
+    background-color: #fff;
+    color: #444;
+    cursor: default;
+}
+
+@media screen and (min-width: 600px) {
+    nav li {
+        width: 120px;
+        border-bottom: none;
+        height: 70px;
+        line-height: 70px;
+        font-size: 1.2em;
+    }
+
+
+    nav li {
+      float: left;
+    }
+    nav ul {
+      overflow: auto;
+      width: 600px;
+      margin: 0;
+    }
+
+}
