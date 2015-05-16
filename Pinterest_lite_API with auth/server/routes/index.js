@@ -4,8 +4,8 @@ var router = express.Router();
 var db = require('mysql');
 var connection = db.createConnection({
     host     : 'localhost',
-    user     : 'root',
-    password : 'NS73ur29'
+    user     : '',
+    password : ''
 });
 
 connection.query('USE Pinterest_lite', function (err) {
